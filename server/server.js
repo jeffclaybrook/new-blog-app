@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken"
 import cors from "cors"
 import admin from "firebase-admin"
 import aws from "aws-sdk"
-// UPDATE
 import serviceAccountKey from "./blog-app-5145e-firebase-adminsdk-yvgyu-1a971c117d.json" assert { type: "json" }
 import { getAuth } from "firebase-admin/auth"
 import { nanoid } from "nanoid"
@@ -22,9 +21,8 @@ const slatRounds = 10
 let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
 
-// UPDATE
 mongoose.connect(
-  "mongodb+srv://jeffreyclaybrook15:6tsvD73qrH4VTEir@cluster0.dc9a7z0.mongodb.net/",
+  process.env.DB_LOCATION,
   {
     autoIndex: true
   }
@@ -43,7 +41,6 @@ const s3 = new aws.S3({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 })
 
-// UPDATE
 const generateUploadURL = async () => {
   const date = new Date()
   const imageName = `${nanoid()}-${date.getTime()}.jpeg`

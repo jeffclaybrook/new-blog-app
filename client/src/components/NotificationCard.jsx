@@ -6,7 +6,11 @@ import { getDay } from "../common/date"
 import NotificationCommentField from "./NotificationCommentField"
 import axios from "axios"
 
-const NotificationCard = ({ data, index, notificationData }) => {
+const NotificationCard = ({
+ data,
+ index,
+ notificationData
+}) => {
  const [isReplying, setIsReplying] = useState(false)
 
  let {

@@ -34,7 +34,7 @@ const UploadImageByURL = async (e) => {
  }
 }
 
-export const tools = new EditorJS({
+const tools = new EditorJS({
  holder: "editorjs",
  embed: Embed,
  tools: {
@@ -67,3 +67,5 @@ export const tools = new EditorJS({
   inlineCode: InlineCode
  }
 })
+
+export default tools
